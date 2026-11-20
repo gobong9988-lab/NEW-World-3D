@@ -7,8 +7,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;600;700&display=swap" rel="stylesheet" />
-  <script type="module" crossorigin src="./assets/index-MxFLuFpA.js"></script>
-  <link rel="stylesheet" crossorigin href="./assets/index-ChW1AX29.css">
+  <script type="module" crossorigin src="./assets/index-B6oYZ1xB.js"></script>
+  <link rel="stylesheet" crossorigin href="./assets/index-zeXpc6Ag.css">
 </head>
 <body class="bg-slate-950 text-white overflow-hidden select-none">
   <!-- Main WebGL Canvas Container -->
@@ -84,51 +84,37 @@
           <span id="autopilot-dot" class="w-1.5 h-1.5 rounded-full bg-amber-400"></span>
           <span id="autopilot-label">자동 무빙 ON</span>
         </button>
-        <label class="glass-pill px-3 py-1.5 rounded-full text-[11px] text-slate-200 flex items-center gap-1.5 cursor-pointer hover:bg-white/15 transition" title="녹화 시작 시 화면 HUD 자동 숨김">
-          <input id="chk-hide-hud-rec" type="checkbox" checked class="accent-amber-400 rounded cursor-pointer" />
-          <span>녹화 시 HUD 숨김</span>
-        </label>
         <button id="btn-toggle-hud" type="button" class="glass-pill px-3 py-1.5 rounded-full text-[11px] text-slate-300 hover:text-white hover:bg-white/15 transition cursor-pointer" title="HUD 숨기기/보이기 (H)">
           HUD 숨김 (H)
         </button>
       </div>
 
-      <!-- Main Camera Preset Bar + 60fps Recorder -->
+      <!-- Main Camera Preset Bar (6 Cinematic Views) -->
       <div class="pointer-events-auto glass-panel flex flex-wrap items-center justify-center gap-1.5 p-2 rounded-2xl max-w-full">
         <button data-preset="0" class="cam-btn active" type="button">
           <span>🏞️</span><span>파노라마 전경</span>
         </button>
         <button data-preset="1" class="cam-btn" type="button">
-          <span>🦅</span><span>새의 시선 (POV)</span>
+          <span>🐦</span><span>새의 시선 (POV)</span>
         </button>
         <button data-preset="2" class="cam-btn" type="button">
-          <span>🌊</span><span>강변 저공비행</span>
+          <span>🦅</span><span>매의 시선 (고공)</span>
         </button>
         <button data-preset="3" class="cam-btn" type="button">
-          <span>🏡</span><span>마을 &amp; 목초지</span>
+          <span>🌊</span><span>강변 저공비행</span>
         </button>
         <button data-preset="4" class="cam-btn" type="button">
-          <span>🚀</span><span>우주 외부</span>
+          <span>🏡</span><span>마을 &amp; 목초지</span>
         </button>
-
-        <div class="hidden sm:block h-6 w-px bg-white/15 mx-1"></div>
-
-        <button id="btn-record" type="button" class="rec-btn" title="60fps WebM 영상 녹화 시작/중지 (R)">
-          <span id="rec-icon">🎥</span>
-          <span id="rec-label">60fps 녹화</span>
-          <span id="rec-timer" class="hidden font-mono text-[11px] text-rose-100 ml-0.5">00:00</span>
+        <button data-preset="5" class="cam-btn" type="button">
+          <span>🚀</span><span>우주 외부</span>
         </button>
       </div>
     </div>
   </div>
 
-  <!-- Minimal Floating Restore/Stop Pill (shown only when HUD is hidden) -->
+  <!-- Minimal Floating Restore Pill (shown only when HUD is hidden) -->
   <div id="hud-restore-pill" class="hidden fixed bottom-4 right-4 z-30 flex items-center gap-2">
-    <button id="btn-stop-rec-floating" type="button" class="hidden px-3.5 py-2 rounded-full bg-rose-600/90 hover:bg-rose-500 text-white text-xs font-semibold shadow-lg backdrop-blur-md cursor-pointer items-center gap-1.5">
-      <span class="w-2 h-2 rounded-full bg-white animate-pulse"></span>
-      <span>녹화 중지</span>
-      <span id="rec-timer-floating" class="font-mono">00:00</span>
-    </button>
     <button id="btn-show-hud" type="button" class="px-3 py-2 rounded-full bg-slate-900/75 hover:bg-slate-800/90 border border-white/15 text-slate-200 text-xs backdrop-blur-md cursor-pointer">
       HUD 보이기 (H)
     </button>
